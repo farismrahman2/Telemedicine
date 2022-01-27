@@ -1,6 +1,7 @@
 import React from 'react';
 import './header.css';
 import bg from '../../assets/bgphoto.png'
+import { motion } from 'framer-motion';
 
 const Header = () => {
   return(
@@ -8,18 +9,39 @@ const Header = () => {
 
 <div className='header_section_padding' id ='home'>
   <div className='header_content'>
-    <h1 className='gradient_text'> Best Telemedicine portal with amazing services</h1>
-    <p> We believe in giving life to the dream business projects and providing a hassle free experience. We've been successful in offering an extensive online platform for any business genre from starting to running and to reaching new growth parameters.</p>
+    <motion.h1 
+     initial={{x:'-99vw'}}
+     animate={{x:'0'}}
+     transition={{delay:1, type: 'spring'}}
+    
+    
+    
+    className='gradient_text'> Best Telemedicine portal with amazing services</motion.h1>
+    <motion.p 
+     initial={{x:'-99vw'}}
+     animate={{x:'0'}}
+     transition={{delay:1.5,duration:'2', type: 'spring'}}
+    > We believe in giving life to the dream business projects and providing a hassle free experience. We've been successful in offering an extensive online platform for any business genre from starting to running and to reaching new growth parameters.</motion.p>
    
-    <div className='header_content_input'>
+    <motion.div className='header_content_input'
+    whileHover={{duration:'0',delay:0,scale:1.3}}
+    initial={{x:'-100vw'}}
+    animate={{x:'0'}}
+    
+    
+    >
       <button>Book an Appointment!</button>
-    </div>
+    </motion.div>
     
   </div>
-  <div className='header-image'>
+  <motion.div 
+  initial={{x:'100vw'}}
+  animate={{x:'0'}}
+  transition={{delay:2,duration:'2', type: 'spring'}}
+   className='header-image'>
 
     <img src={bg} alt="" />
-  </div>
+  </motion.div>
 
 </div>
 
