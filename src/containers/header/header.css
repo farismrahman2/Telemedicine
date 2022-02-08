@@ -47,5 +47,9 @@
     border-style:double;
 }
    
-    
+.header-image img{
+    width:640px;
+    height: 365px;
+    margin-bottom:1rem;
+}    
     
