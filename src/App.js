@@ -1,16 +1,22 @@
 import './App.css';
+
 import MessengerCustomerChat from 'react-messenger-customer-chat';
-import {  Brand, Cta, Navbar } from './Components';
+import {Appointment,  Brand, Cta, Navbar } from './Components';
 import { Footer, Blog, Header, What, Possibility,Ourdoctors } from './containers';
 
-import React from 'react';
+import React,{useState} from 'react';
 
 const App = () => {
+
+  const [showModal,setShowModal]=useState(false);
   return (
     <div className="App">
       <div className="gradientbg">
         <Navbar/>
+        
         <Header/>
+        <Appointment showModal={showModal} setShowModal ={setShowModal}/>
+       
 
       </div>
       <Brand/>

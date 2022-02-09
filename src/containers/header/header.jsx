@@ -1,13 +1,17 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './header.css';
 import bg from '../../assets/bgphoto.png'
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+import Appointment from '../../Components/sign/appointment.jsx'
 
 const Header = () => {
+  const [showModal,setShowModal]=useState(false);
   return(
 
 
 <div className='header_section_padding' id ='home'>
+<Appointment showModal={showModal} setShowModal ={setShowModal}/>
+<AnimatePresence exitBeforeEnter onExitComplete={()=>setShowModal(false) }/>
   <div className='header_content'>
     <motion.h1 
      initial={{x:'-99vw'}}
@@ -30,7 +34,7 @@ const Header = () => {
     
     
     >
-      <button>Book an Appointment!</button>
+      <button onClick={()=> setShowModal(true)}>Book an Appointment!</button>
     </motion.div>
     
   </div>
