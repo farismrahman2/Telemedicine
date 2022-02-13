@@ -25,13 +25,13 @@ const Modal = ({ showModal, setShowModal }) => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                FirstName,
-                LastName,
-                email,
-                DoB
+                // FirstName,
+                // LastName,
+                // email,
+                // DoB
             }),
         })
-        const data = await response.json()
+        // const data = await response.json()
     }; // your form submit function which will invoke after successful validation
 
 

@@ -2,7 +2,7 @@ import './App.css';
 
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import {Appointment,  Brand, Cta, Navbar } from './Components';
-import { Footer, Blog, Header, What, Possibility,Ourdoctors } from './containers';
+import { Footer, Blog, Header, What, Possibility,Ourdoctors,ContactUs } from './containers';
 
 import React,{useState} from 'react';
 
@@ -26,7 +26,9 @@ const App = () => {
       <Possibility/>
       <Cta/>
       <Blog/>
+      <ContactUs/>
       <Footer/>
+      
 
       <MessengerCustomerChat pageId="103214868939799"appId="477258803868285"/>
 
