@@ -18,8 +18,20 @@ const Modal = ({ showModal, setShowModal }) => {
         formState: { errors }
     } = useForm(defaultValues);
 
-    const onSubmit = (data) => {
-        alert(JSON.stringify(data));
+    async function onSubmit(event) {
+        event.PreventDefault()
+        fetch('http://localhost:4000/app/signup',{
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                // FirstName,
+                // LastName,
+                // email,
+                // DoB
+            }),
+        })
+        // const data = await response.json()
     }; // your form submit function which will invoke after successful validation
 
 
@@ -42,29 +54,29 @@ const Modal = ({ showModal, setShowModal }) => {
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <label>First Name</label>
                             <input
-                                {...register("firstName", {
+                                {...register("FirstName", {
                                     required: true,
                                     maxLength: 20,
                                     pattern: /^[A-Za-z]+$/i
                                 })}
                             />
-                            {errors?.firstName?.type === "required" && <p>This field is required</p>}
-                            {errors?.firstName?.type === "maxLength" && (
+                            {errors?.FirstName?.type === "required" && <p>This field is required</p>}
+                            {errors?.FirstName?.type === "maxLength" && (
                                 <p>First name cannot exceed 20 characters</p>
                             )}
-                            {errors?.firstName?.type === "pattern" && (
+                            {errors?.FirstName?.type === "pattern" && (
                                 <p>Alphabetical characters only</p>
                             )}
                             <label>Last Name</label>
-                            <input {...register("lastName", { pattern: /^[A-Za-z]+$/i })} />
-                            {errors?.lastName?.type === "pattern" && (
+                            <input {...register("LastName", { pattern: /^[A-Za-z]+$/i })} />
+                            {errors?.LastName?.type === "pattern" && (
                                 <p>Alphabetical characters only</p>
                             )}
                             
                             <label>Date of Birth</label>
                             <Controller
                                 control={control}
-                                name="ReactDatepicker"
+                                name="DoB"
                                 render={({ field: { onChange, onBlur, value, ref } }) => (
                                     <ReactDatePicker
                                         onChange={onChange}
@@ -77,7 +89,7 @@ const Modal = ({ showModal, setShowModal }) => {
 
 
                             <label>Email</label>
-                            <input {...register("age", { required: true, pattern: /^\S+@\S+$/i })} />
+                            <input {...register("email", { required: true, pattern: /^\S+@\S+$/i })} />
 
                             <label>Phone</label>
                             <input {...register("age", { min: 18, max: 99 })} />
