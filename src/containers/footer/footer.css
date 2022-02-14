@@ -1,16 +1,34 @@
 .footer{
-  display:flex; 
-  
-  display: flex;
-
   display:flex;
   flex-direction: column;
   justify-content:center;
   align-items:center;
   
   background: #031B34;
+  /*Create object for animation*/
+  animation-name: mymove;
+  animation-duration:10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
-
+/*Add animation*/
+@keyframes mymove {
+    1000% {
+        background: #003396;
+      }
+      75% {
+        background: #1750AC;
+      }
+      50% {
+        background: #3373C4;
+      }
+      25% {
+        background: #5494DA;
+      }
+      0% {
+        background: #86CEFA;
+      }
+  }
 
 .footer-heading h1{
     font-weight:800;
