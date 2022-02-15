@@ -14,8 +14,8 @@ const Blog = () => {
   }
 
   return(
-    <div className = "wrapper">
-      <h1 className='gradienttext'>FAQ</h1>
+    <div className = "wrapper section__margin">
+      <h1 className='gradienttext'>Frequently Asked Questions</h1>
       <div className = "accordion">
         {data.map((item,i)=>(
           <div className = "item">

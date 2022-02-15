@@ -13,6 +13,26 @@
     text-align: center;
     padding-right: 150px; 
 }
+.wrapper h2{
+    font-family: var(--font-family);
+    font-size: 30px;
+    
+    text-align: center;
+  
+}
+.wrapper h2{
+    font-family: var(--font-family);
+    font-size: 30px;
+    
+    text-align: center;
+  
+}
+.content{
+    font-family: var(--font-family);
+    font-size: 20px;
+    
+    text-align: left;
+}
 .accordion{
     width:500px;
 }
