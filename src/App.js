@@ -23,8 +23,8 @@ const App = () => {
       <What/>
       
       <Ourdoctors/>
-      <Possibility/>
-      <Cta/>
+      {/* <Possibility/>
+      <Cta/> */}
       <Blog/>
       <ContactUs/>
       <Footer/>
