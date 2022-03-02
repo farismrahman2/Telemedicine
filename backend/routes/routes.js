@@ -20,4 +20,5 @@ router.post('/signup',(request,response)=>{
         response.json(error)
     })
 })
+
 module.exports = router
