@@ -5,6 +5,7 @@ import ReactDatePicker from "react-datepicker";
 import { motion, AnimatePresence, animate } from 'framer-motion'
 import './appointment.css';
 import { useForm, Controller } from "react-hook-form";
+import axios from "axios";
 
 
 
@@ -18,20 +19,15 @@ const Modal = ({ showModal, setShowModal }) => {
         formState: { errors }
     } = useForm(defaultValues);
 
-    async function onSubmit(event) {
-        event.PreventDefault()
-        fetch('http://localhost:4000/app/signup',{
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                // FirstName,
-                // LastName,
-                // email,
-                // DoB
-            }),
-        })
-        // const data = await response.json()
+
+
+    const onSubmit = data => {
+        
+        axios({
+            method: 'post',
+            url:'http://localhost:3000/app/signup',
+            data
+        });
     }; // your form submit function which will invoke after successful validation
 
 
@@ -52,7 +48,7 @@ const Modal = ({ showModal, setShowModal }) => {
 
                     >
                         <form onSubmit={handleSubmit(onSubmit)}>
-                            <label>First Name</label>
+                            <label>Full Name</label>
                             <input
                                 {...register("FirstName", {
                                     required: true,
@@ -67,13 +63,9 @@ const Modal = ({ showModal, setShowModal }) => {
                             {errors?.FirstName?.type === "pattern" && (
                                 <p>Alphabetical characters only</p>
                             )}
-                            <label>Last Name</label>
-                            <input {...register("LastName", { pattern: /^[A-Za-z]+$/i })} />
-                            {errors?.LastName?.type === "pattern" && (
-                                <p>Alphabetical characters only</p>
-                            )}
                             
-                            <label>Date of Birth</label>
+
+                            {/* <label>Date of Birth</label>
                             <Controller
                                 control={control}
                                 name="DoB"
@@ -82,17 +74,27 @@ const Modal = ({ showModal, setShowModal }) => {
                                         onChange={onChange}
                                         onBlur={onBlur}
                                         selected={value}
+                                        
                                     />
                                 )}
-                            />
+                            /> */}
 
-
-
+                            {/* <label>Gender Selection</label>
+                            <select {...register("gender")}>
+                                <option value="female">female</option>
+                                <option value="male">male</option>
+                                <option value="other">other</option>
+                            </select> */}
                             <label>Email</label>
                             <input {...register("email", { required: true, pattern: /^\S+@\S+$/i })} />
+                            <label>Date of Birth</label>
+                            <input {...register("Dob", { required: true })} />
+                            <label>Schedule</label>
+                            <input {...register("Dob", { required: true })} />
+                            <label>Your Problems</label>
+                            <input {...register("Dob", { required: true })} />
 
-                            <label>Phone</label>
-                            <input {...register("age", { min: 18, max: 99 })} />
+
 
                             <input type="submit" />
                             <button onClick={() => setShowModal(false)}>Cancel</button>
