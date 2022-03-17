@@ -4,7 +4,7 @@ import './what.css';
 const What = () => {
     return <div>
         
-        <div className="wrapper section__margin">
+        <div id = "what" className="wrapper section__margin">
 
 
             <h1 className='gradienttext'>What we Treat</h1>
