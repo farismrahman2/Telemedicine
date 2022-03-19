@@ -2,8 +2,7 @@ POST http://localhost:3000/app/signup
 Content-Type: application/json
 
 {
-    "FirstName":"Farzana",
-    "LastName":"Rahman",
+    "name":"Farzana",
     "email":"Faris@gmail.com",
-    "DoB":"10/19/1997"
+    "text":"Lizards are a widespread "
 }

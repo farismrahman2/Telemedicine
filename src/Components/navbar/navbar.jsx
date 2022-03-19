@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import './navbar.css';
+import { Link } from 'react-router-dom';
 import { RiMenu3Line, RiCloseLin } from 'react-icons/ri';
 import logo from '../../assets/logo.png'
 
@@ -16,6 +17,7 @@ const Navbar = () => {
         <p><a href='#what'> What We Treat</a></p>
         <p><a href='#possibility'> Help</a></p>
         <p><a href='#home'> (202) 231-4322</a></p>
+        <p><a href='/control'> Admin</a></p>
         <p><a href='#home'> </a></p>
 
       </div>

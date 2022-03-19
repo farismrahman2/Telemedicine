@@ -1,28 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './admin.css';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
+
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 const Admin = () => {
 
+    // const[notes,setnotes] = useState([{
+
+    //     name:'',
+    //     email:'',
+    //     text:''
+    // }])
+
+    // useEffect(()=>{
+    //     fetch("http://localhost:3000/app/notes").then(res => {
+    //         if(res.ok){
+    //             return res.json
+    //         }
+    //     }).then(jsonRes => setnotes(jsonRes));
+    // })
+
     return <div className='main section__margin'>
 
         <div className='contact'>
+            {/* {notes.map(note=>
             <Card className='card' sx={{ maxWidth: 345 }}>
                 <CardActionArea>
 
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
-                            Faris Rahman
+                            {note.name}
                         </Typography>
                         <Typography gutterBottom variant="h7" component="div">
-                            farismrahman2@gmail.com
+                        {note.email}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                            Lizards are a widespread group of squamate reptiles, with over 6,000
-                            species, ranging across all continents except Antarctica
+                        {note.text}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
@@ -31,7 +46,7 @@ const Admin = () => {
                         Close
                     </Button>
                 </CardActions>
-            </Card>
+            </Card>)} */}
             <Card className='card' sx={{ maxWidth: 345 }}>
                 <CardActionArea>
 

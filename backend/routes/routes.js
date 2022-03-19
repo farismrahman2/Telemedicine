@@ -1,24 +1,25 @@
-const express = require('express')
-const router = express.Router()
-const signUpTemplateCopy = require ('../models/SignUpModels')
+const express = require("express");
+const router = express.Router();
+const signUpTemplateCopy = require("../models/SignUpModels");
 
-router.post('/signup',(request,response)=>{
-    const signedUpUser = new signUpTemplateCopy({
+router.post("/signup", (request, response) => {
+  const signedUpUser = new signUpTemplateCopy({
+    name: request.body.name,
+    email: request.body.email,
+    text: request.body.text,
+  });
+  signedUpUser
+    .save()
+    .then((data) => {
+      response.json(data);
+    })
+    .catch((error) => {
+      response.json(error);
+    });
+});
 
-        FirstName:request.body.FirstName,
-        LastName:request.body.LastName,
-        email:request.body.email,
-        DoB:request.body.DoB,
-       
-        
-    })
-    signedUpUser.save()
-    .then(data=>{
-        response.json(data)
-    })
-    .catch(error => {
-        response.json(error)
-    })
-})
+router.route("/notes").get((request, response) => {
+  Note.find().then((foundNotes) => response.json(foundNotes));
+});
 
-module.exports = router
+module.exports = router;
