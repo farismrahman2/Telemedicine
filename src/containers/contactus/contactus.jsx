@@ -10,7 +10,7 @@ const ContactUs = () => {
 
   
 
-  return <div class="wrapper section__margin">
+  return <div id = "contactus" class="wrapper section__margin">
     <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
       <h1 className='gradienttext'> Contact Us</h1>
 
